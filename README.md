@@ -18,3 +18,24 @@ It automatically logs method calls, arguments, execution time, and exceptions â€
 ```bash
 dotnet pack -c Release
 dotnet add package KlusFlow.LoggingProxy --source ./bin/Release
+```
+## Setup
+```Program.cs
+using KlusFlow.LoggingProxy.Core;
+
+builder.Services.AddLoggedServices(typeof(IMyService).Assembly);
+```
+## Usage example
+```IMyService.cs
+public interface IMyService {
+    Task DoWorkAsync();
+}
+
+public class MyService : IMyService {
+    [Log(LogLevel.Debug)]
+    public async Task DoWorkAsync() { ... }
+
+    [NoLog]
+    public Task InternalHelper() { ... }
+}
+```
