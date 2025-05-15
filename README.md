@@ -1,4 +1,4 @@
-# KlusFlow.LoggingProxy
+# Momkay.LoggingProxy
 
 A lightweight proxy-based logging interceptor for .NET service interfaces.  
 It automatically logs method calls, arguments, execution time, and exceptions — without polluting your service code.

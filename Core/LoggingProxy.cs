@@ -1,10 +1,11 @@
 using System.Diagnostics;
 using System.Reflection;
 using System.Text.Json;
-using KlusFlow.LoggingProxy.Attributes;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using Momkay.LoggingProxy.Attributes;
 
-namespace KlusFlow.LoggingProxy.Core;
+namespace Momkay.LoggingProxy.Core;
 
 internal class LoggingProxy<T> : DispatchProxy
 {
@@ -17,7 +18,7 @@ internal class LoggingProxy<T> : DispatchProxy
         _logger = logger;
     }
 
-    protected override object? Invoke(MethodInfo targetMethod, object?[]? args)
+    protected override object Invoke(MethodInfo targetMethod, object[] args)
     {
         if (targetMethod.GetCustomAttribute<NoLogAttribute>() != null)
             return targetMethod.Invoke(_decorated, args);
@@ -42,18 +43,5 @@ internal class LoggingProxy<T> : DispatchProxy
             _logger.LogError(ex.InnerException ?? ex, "{Method} failed after {Elapsed}ms", name, stopwatch.ElapsedMilliseconds);
             throw ex.InnerException ?? ex;
         }
-    }
-
-    protected override async Task InvokeAsync(MethodInfo targetMethod, object?[]? args)
-    {
-        Invoke(targetMethod, args);
-        if (targetMethod.ReturnType == typeof(Task task))
-            await (Task)targetMethod.Invoke(_decorated, args)!;
-    }
-
-    protected override async Task<TResult> InvokeAsyncT<TResult>(MethodInfo targetMethod, object?[]? args)
-    {
-        var result = Invoke(targetMethod, args);
-        return result is Task<TResult> task ? await task : default!;
     }
 }

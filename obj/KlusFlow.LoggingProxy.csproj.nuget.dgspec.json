@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\azisk\\Documents\\Momkay.LogginProxy\\KlusFlow.LoggingProxy.csproj": {}
+    "C:\\Users\\azisk\\Documents\\GitHub\\Momkay.LogginProxy\\KlusFlow.LoggingProxy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\azisk\\Documents\\Momkay.LogginProxy\\KlusFlow.LoggingProxy.csproj": {
+    "C:\\Users\\azisk\\Documents\\GitHub\\Momkay.LogginProxy\\KlusFlow.LoggingProxy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\azisk\\Documents\\Momkay.LogginProxy\\KlusFlow.LoggingProxy.csproj",
-        "projectName": "KlusFlow.LoggingProxy",
-        "projectPath": "C:\\Users\\azisk\\Documents\\Momkay.LogginProxy\\KlusFlow.LoggingProxy.csproj",
+        "projectUniqueName": "C:\\Users\\azisk\\Documents\\GitHub\\Momkay.LogginProxy\\KlusFlow.LoggingProxy.csproj",
+        "projectName": "Momkay.LoggingProxy",
+        "projectPath": "C:\\Users\\azisk\\Documents\\GitHub\\Momkay.LogginProxy\\KlusFlow.LoggingProxy.csproj",
         "packagesPath": "C:\\Users\\azisk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\azisk\\Documents\\Momkay.LogginProxy\\obj\\",
+        "outputPath": "C:\\Users\\azisk\\Documents\\GitHub\\Momkay.LogginProxy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,15 +22,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "net8"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
-            "targetAlias": "netstandard2.1",
+          "net8.0": {
+            "targetAlias": "net8",
             "projectReferences": {}
           }
         },
@@ -47,9 +47,13 @@
         "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
-        "netstandard2.1": {
-          "targetAlias": "netstandard2.1",
+        "net8.0": {
+          "targetAlias": "net8",
           "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
             "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -67,11 +71,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

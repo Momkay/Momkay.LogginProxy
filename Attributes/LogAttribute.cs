@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
+using System;
 
-namespace KlusFlow.LoggingProxy.Attributes;
+namespace Momkay.LoggingProxy.Attributes;
 
 [AttributeUsage(AttributeTargets.Method)]
 public sealed class LogAttribute : Attribute

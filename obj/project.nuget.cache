@@ -1,14 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5mZbCUbvSBU=",
+  "dgSpecHash": "auwPJyZGD8w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\azisk\\Documents\\Momkay.LogginProxy\\KlusFlow.LoggingProxy.csproj",
+  "projectFilePath": "C:\\Users\\azisk\\Documents\\GitHub\\Momkay.LogginProxy\\Momkay.LoggingProxy.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\azisk\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
-    "C:\\Users\\azisk\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
-    "C:\\Users\\azisk\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
-    "C:\\Users\\azisk\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
-    "C:\\Users\\azisk\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512"
+    "C:\\Users\\azisk\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.5\\microsoft.extensions.dependencyinjection.abstractions.9.0.5.nupkg.sha512",
+    "C:\\Users\\azisk\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

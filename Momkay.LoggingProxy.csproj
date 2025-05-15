@@ -1,17 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net8</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.0.0</Version>
-    <PackageId>KlusFlow.LoggingProxy</PackageId>
-    <Authors>KlusFlow</Authors>
-    <Company>KlusFlow</Company>
+    <PackageId>Momkay.LoggingProxy</PackageId>
+    <Authors>Momkay</Authors>
+    <Company>Momkay</Company>
     <Description>Automatic logging proxy with attribute support for .NET service interfaces</Description>
     <PackageTags>logging AOP DI DispatchProxy</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.5" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
   </ItemGroup>
 

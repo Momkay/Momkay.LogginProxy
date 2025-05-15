@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
+using System.Reflection;
 
-namespace KlusFlow.LoggingProxy.Core;
+namespace Momkay.LoggingProxy.Core;
 
 public static class LoggingProxyFactory
 {
