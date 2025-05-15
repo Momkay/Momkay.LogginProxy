@@ -17,11 +17,11 @@ It automatically logs method calls, arguments, execution time, and exceptions â€
 
 ```bash
 dotnet pack -c Release
-dotnet add package KlusFlow.LoggingProxy --source ./bin/Release
+dotnet add package Momkay.LoggingProxy --source ./bin/Release
 ```
 ## Setup
 ```Program.cs
-using KlusFlow.LoggingProxy.Core;
+using Momkay.LoggingProxy.Core;
 
 builder.Services.AddLoggedServices(typeof(IMyService).Assembly);
 ```
