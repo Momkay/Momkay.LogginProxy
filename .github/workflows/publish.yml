@@ -31,15 +31,24 @@ jobs:
         run: |
           PACKAGE=Momkay.LoggingProxy
           VERSION=${{ steps.version.outputs.VERSION }}
-          echo "Checking if version $VERSION exists for $PACKAGE"
-          curl --silent --fail --head "https://api.nuget.org/v3-flatcontainer/$PACKAGE/$VERSION/$PACKAGE.$VERSION.nupkg" || exit 0
-          echo "Package version $VERSION already exists. Skipping publish."
-          exit 1
+          URL="https://api.nuget.org/v3-flatcontainer/${PACKAGE,,}/${VERSION}/${PACKAGE}.${VERSION}.nupkg"
+      
+          echo "Checking if version $VERSION exists at:"
+          echo "$URL"
+      
+          if curl --head --silent --fail "$URL"; then
+            echo "🛑 Package version $VERSION already exists. Skipping publish."
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "✅ Package version $VERSION does not exist. Continuing..."
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: 📦 Restore
         run: dotnet restore ./Momkay.LoggingProxy.csproj
 
       - name: 🧱 Build
+        if: steps.check.outputs.skip == 'false'
         run: dotnet build ./Momkay.LoggingProxy.csproj -c Release --no-restore
 
       - name: 📚 Pack
