@@ -14,7 +14,7 @@ public static class ServiceCollectionExtensions
             .Select(t => new
             {
                 Impl = t,
-                Interface = t.GetInterfaces().FirstOrDefault(i => i.Name == "I" + t.Name)
+                Interface = t.GetInterfaces().SingleOrDefault(i => i.Name == $"I{t.Name}")
             })
             .Where(x => x.Interface != null);
 

@@ -14,8 +14,8 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
 
     <!-- Enhanced metadata -->
-    <PackageProjectUrl>https://github.com/Momkay/Momkay.LogginProxy</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Momkay/Momkay.LogginProxy.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Momkay/Momkay.LoggingProxy</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Momkay/Momkay.LoggingProxy.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>

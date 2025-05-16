@@ -4,8 +4,7 @@ using System;
 namespace Momkay.LoggingProxy.Attributes;
 
 [AttributeUsage(AttributeTargets.Method)]
-public sealed class LogAttribute : Attribute
+public sealed class LogAttribute(LogLevel level = LogLevel.Debug) : Attribute
 {
-    public LogLevel Level { get; }
-    public LogAttribute(LogLevel level = LogLevel.Information) => Level = level;
+    public LogLevel Level { get; } = level;
 }
