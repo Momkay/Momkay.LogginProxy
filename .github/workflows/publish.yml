@@ -23,6 +23,7 @@ jobs:
         id: version
         run: |
           VERSION=$(grep -oPm1 "(?<=<Version>)[^<]+" Momkay.LoggingProxy.csproj)
+          echo "Found version: $VERSION"
           echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
       - name: 🧪 Check if version already exists on nuget.org
