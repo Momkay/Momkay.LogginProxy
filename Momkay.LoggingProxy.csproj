@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net8</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
 
     <!-- NuGet package info -->
     <PackageId>Momkay.LoggingProxy</PackageId>
