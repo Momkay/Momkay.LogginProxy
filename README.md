@@ -1,7 +1,6 @@
 # Momkay.LoggingProxy
 
-A lightweight proxy-based logging interceptor for .NET service interfaces.  
-It automatically logs method calls, parameters, execution time, and exceptions — without cluttering your service code.
+A lightweight proxy-based logging interceptor for .NET service interfaces. mIt automatically logs method calls, parameters, execution time, and exceptions — without cluttering your service code.
 
 ---
 
@@ -87,6 +86,23 @@ public class MyService : IMyService
 |---------------|-----------------------------------------|
 | `[NoLog]`     | Excludes method from logging            |
 | `[Log(Level)]`| Overrides log level (default: Info)     |
+
+---
+
+## Return Value Logging
+
+You can log method return values by setting:
+
+Per method:
+```csharp
+[Log(includeReturnValue: true)]
+public Task<string> GetTokenAsync() { ... }
+```
+
+Globally:
+```csharp
+LoggingProxyConfig.LogReturnValuesByDefault = true;
+```
 
 ---
 
