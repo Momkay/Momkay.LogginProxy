@@ -34,7 +34,7 @@ internal class LoggingProxy<T> : DispatchProxy
         var argsJson = JsonSerializer.Serialize(args);
         var stopwatch = Stopwatch.StartNew();
 
-        _logger.Log(level, $"{ColorCyan}[LOGGING-PROXY] {name} called with args: {argsJson}{ColorReset}");
+        _logger.Log(level, $"{ColorCyan}[LOGGING-PROXY ▶] {name} called with args: {argsJson}{ColorReset}");
 
         try
         {
@@ -57,13 +57,13 @@ internal class LoggingProxy<T> : DispatchProxy
             }
 
             stopwatch.Stop();
-            _logger.Log(level, $"{ColorGreen}[LOGGING-PROXY] {name} completed in {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
+            _logger.Log(level, $"{ColorGreen}[LOGGING-PROXY ✔] {name} completed in {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
             return result;
         }
         catch (TargetInvocationException ex)
         {
             stopwatch.Stop();
-            _logger.LogError(ex.InnerException ?? ex, $"{ColorRed}[LOGGING-PROXY] {name} failed after {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
+            _logger.LogError(ex.InnerException ?? ex, $"{ColorRed}[LOGGING-PROXY ❌] {name} failed after {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
             throw ex.InnerException ?? ex;
         }
     }
@@ -74,12 +74,12 @@ internal class LoggingProxy<T> : DispatchProxy
         {
             await task;
             stopwatch.Stop();
-            _logger.Log(level, $"{ColorGreen}[LOGGING-PROXY] {name} completed in {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
+            _logger.Log(level, $"{ColorGreen}[LOGGING-PROXY ✔] {name} completed in {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
         }
         catch (Exception ex)
         {
             stopwatch.Stop();
-            _logger.LogError(ex, $"{ColorRed}[LOGGING-PROXY] {name} failed after {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
+            _logger.LogError(ex, $"{ColorRed}[LOGGING-PROXY ❌] {name} failed after {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
             throw;
         }
     }
@@ -90,13 +90,13 @@ internal class LoggingProxy<T> : DispatchProxy
         {
             var result = await task;
             stopwatch.Stop();
-            _logger.Log(level, $"{ColorGreen}[LOGGING-PROXY] {name} completed in {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
+            _logger.Log(level, $"{ColorGreen}[LOGGING-PROXY ✔] {name} completed in {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
             return result;
         }
         catch (Exception ex)
         {
             stopwatch.Stop();
-            _logger.LogError(ex, $"{ColorRed}[LOGGING-PROXY] {name} failed after {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
+            _logger.LogError(ex, $"{ColorRed}[LOGGING-PROXY ❌] {name} failed after {stopwatch.ElapsedMilliseconds}ms{ColorReset}");
             throw;
         }
     }
