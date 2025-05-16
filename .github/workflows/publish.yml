@@ -22,10 +22,10 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build ./Momkay.LoggingProxy.csproj -c Release --no-restore
 
       - name: Pack NuGet package
-        run: dotnet pack --configuration Release --no-build
+        run: dotnet pack ./Momkay.LoggingProxy.csproj --configuration Release --no-build
 
       - name: Push to NuGet Packages
         run: dotnet nuget push bin/Release/*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key ${{ secrets.NUGET_API_KEY }}
