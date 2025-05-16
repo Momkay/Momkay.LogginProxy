@@ -44,6 +44,7 @@ jobs:
           fi
 
       - name: 📦 Restore
+        if: steps.check.outputs.skip == 'false'
         run: dotnet restore ./Momkay.LoggingProxy.csproj
 
       - name: 🧱 Build
@@ -51,7 +52,9 @@ jobs:
         run: dotnet build ./Momkay.LoggingProxy.csproj -c Release --no-restore
 
       - name: 📚 Pack
+        if: steps.check.outputs.skip == 'false'
         run: dotnet pack ./Momkay.LoggingProxy.csproj -c Release --no-build
 
       - name: 🚀 Push to NuGet
+        if: steps.check.outputs.skip == 'false'
         run: dotnet nuget push ./bin/Release/*.nupkg --source "https://api.nuget.org/v3/index.json" --api-key ${{ secrets.NUGET_API_KEY }}
